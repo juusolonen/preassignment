@@ -1,0 +1,20 @@
+<% if (package.Depends) { %>
+    <% let dependencies = package.Depends %>
+    <div class="row"><b>Dependencies: </b>
+    <% dependencies.forEach(dependency => { %>
+
+        <% if(dependency.includes('|')) { %>
+            <% let splittedDependency = dependency.split('|'); %>
+            <a class="mr-2" href="/package/<%=splittedDependency[0].trim()%>"> <%=splittedDependency[0]%></a><p class="mr-2">|<%=splittedDependency[1]%> </p>
+        <% } else { %>
+            <a class="mr-2" href="/package/<%=dependency.trim()%>"> <%=dependency%></a>
+            <% } %>
+    <% }) %>
+
+    </div>
+<% } else { %>
+    <div class="row"><b>Dependencies: </b><p> No dependecies</p></div>
+<% } %>
+
+
+

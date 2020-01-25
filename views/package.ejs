@@ -1,0 +1,21 @@
+<%- include('./includes/header'); %>
+
+<body>
+
+<div class="container">
+    <% if(!package) { %>
+        <div class="alert alert-warning"><p>Failed to load package information: please</p> <a href="/">try again</a></div>
+    <% } else { %>
+
+        <div class="row"><b>Name: </b> <p> <%=package.Package%></p></div>
+        <div class="row"><b>Description: </b> <p> <%= package.Description %></p></div>
+        
+        <%- include('./includes/dependencies', {package: package}) %>
+        <%- include('./includes/pre-deps', {package: package}) %>
+        
+    <% } %>
+
+</div>
+
+</body>
+</html>

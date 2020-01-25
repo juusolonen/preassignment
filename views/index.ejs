@@ -1,0 +1,11 @@
+<%- include('./includes/header'); %>
+
+<body>
+<% packages.forEach(package => { %>
+    <div class="container">
+        <div class="row"><a href="/package/<%=package.Package%>"> <%=package.Package%></a></div>
+    </div>
+<% }) %>
+
+</body>
+</html>
