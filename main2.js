@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const port = 3020;
+const port = process.env.PORT;
 
 const fs = require('fs');
 const parser = require('./models/app2');
