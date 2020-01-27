@@ -1,6 +1,6 @@
 <% if (package.Pre_Depends) { %>
     <% let dependencies = package.Pre_Depends %>
-    <div class="row"><b>Dependencies: </b>
+    <div class="row"><b>Pre-dependencies: </b>
     <% dependencies.forEach(dependency => { %>
 
         <% if(dependency.includes('|')) { %>
